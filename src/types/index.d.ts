@@ -1247,6 +1247,8 @@ export interface Scale<O extends CoreScaleOptions = CoreScaleOptions> extends El
   min: number;
   max: number;
   ticks: Tick[];
+  _length: number;
+  _maxLength: number;
   getMatchingVisibleMetas(type?: string): ChartMeta[];
 
   drawTitle(chartArea: ChartArea): void;
@@ -1337,6 +1339,7 @@ export interface Scale<O extends CoreScaleOptions = CoreScaleOptions> extends El
   beforeFit(): void;
   fit(): void;
   afterFit(): void;
+  _tickSize(): number;
 
   isFullSize(): boolean;
 }
